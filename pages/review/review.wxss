@@ -1,0 +1,99 @@
+/* pages/review/review.wxss */
+.container{
+  font-size: 26rpx;
+}
+
+.topSec{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 70rpx 55rpx 60rpx;
+  background: #f7eee7;
+}
+.topSec .title{
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+  font-family: "cprBold";
+  font-weight:bolder;
+}
+.topSec .descBox{
+  width: 100%;
+  margin: 40rpx 0 60rpx;
+  box-sizing: border-box;
+  padding: 0 70rpx;
+  position: relative; left: 0; top: 0;
+}
+.topSec .descBox image{
+  width: 22rpx; height: 20rpx;
+}
+.topSec .descBox .yh1{
+  position: absolute; left: 10rpx; top: 0;
+}
+.topSec .descBox .yh2{
+  position: absolute; right: 10rpx; bottom: 0;
+}
+.topSec .customer{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50rpx 70rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  position: relative; left: 0; top: 0;
+}
+.topSec .customer .infoBox view{
+  margin-bottom: 6rpx;
+  font-size: 28rpx;
+  font-family: "cprBold";
+  font-weight:bolder;
+}
+.topSec .customer .infoBox text{
+  display: block;
+  width: 270rpx;
+  word-wrap: break-word;
+}
+.topSec .customer image{
+  width: 179rpx; height: 223rpx;
+  position: absolute; right: 66rpx; top: -28rpx;
+}
+
+.btmSec{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 55rpx 65rpx;
+}
+.btmSec .reviewBox{
+  width: 100%;
+  margin-bottom: 25rpx;
+}
+.btmSec .reviewBox .topBox{
+  width: 100%; height: 95rpx;
+  box-sizing: border-box;
+  padding: 50rpx 70rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btmSec .reviewBox .topBox .name{
+  font-size: 28rpx;
+  font-family: "cprBold";
+  font-weight:bolder;
+}
+.btmSec .reviewBox .topBox .starsBox{
+  width: 230rpx; height: 36rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.btmSec .reviewBox .topBox .starsBox image{
+  width: 38rpx; height: 36rpx;
+  margin-right: 8rpx;
+}
+.btmSec .reviewBox .reviewTxt{
+  display: block;
+  box-sizing: border-box;
+  padding: 50rpx 70rpx;
+  background: #eee;
+  word-wrap: break-word;
+  text-align: left;
+  /* text-align: justify; */
+}

@@ -1,0 +1,77 @@
+<!--pages/detail/detail.wxml-->
+<view class='container'>
+  <view class='prodInfo'>
+    <swiper indicator-dots="{{indicatorDots}}" 
+      autoplay="{{autoplay}}" 
+      interval="{{interval}}" 
+      duration="{{duration}}" 
+      current="{{current}}" 
+      bindchange="swiperChange" >
+      <block wx:for="{{prodInfo.sku[selectInd].images}}" wx:key="index">
+        <swiper-item>
+          <image class='swiperImg' src="{{item}}" />
+          <image class='tsImg' src='https://athleticgreens.fugumobile.cn/imgs/ts.png'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <button open-type='share' class='share'>
+      <image src='../../imgs/share.svg'></image>
+      <text>{{txt.share}}</text>
+    </button>
+    <view class='prodName'>{{prodInfo.sku[selectInd].title}} {{prodInfo.sku[selectInd].desc}}</view>
+    <view class="prodInc" hidden="{{!prodInfo.content}}">{{prodInfo.sku[selectInd].sub_content}}</view>
+    <block wx:if="{{prodInfo.sku[selectInd].discount_price}}">
+      <view class="priceBox">
+        <text class="promo_price">¥{{prodInfo.sku[selectInd].discount_price}}<text class='old_price'>¥{{prodInfo.sku[selectInd].price}}</text></text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='prodPrice'>¥{{prodInfo.sku[selectInd].price}}</view>
+    </block>
+    <view class='buyTips'>*{{txt.inc}}</view>
+    <picker mode='selector' style='display:{{selectArr.length>1?"block":"none"}}' 
+      bindchange="bindPickerChange" 
+      range="{{selectArr}}" 
+      value="{{index}}">
+      <view class="picker">
+        {{selectArr[selectInd]}}
+      </view>
+      <image src='../../imgs/select.png'></image>
+    </picker>
+    <view class="prodGift" hidden="{{!prodInfo.sku[selectInd].content}}">{{prodInfo.sku[selectInd].content}}</view>
+  </view>
+
+  <view class='prodIntro'>
+    <view class='introItem' wx:for="{{txt.detail}}" wx:key="index">
+      <view class='itemName' data-id='{{index}}' bindtap='showOrHideFn'>
+        <text>{{item.subtitle}}</text>
+        <view class='btn'>{{item.sts}}</view>
+      </view>
+      <text class='txtBox' style='display: {{item.sts=="-"?"block":"none"}}'>{{item.desc}}</text>
+    </view>
+  </view>
+
+  <view class='btns {{ix?"isX":""}}'>
+    <view class='iconBtn' bindtap='toHomeFn'>
+      <image src='../../imgs/home.svg'/><text>{{txt.btns[0]}}</text>
+    </view>
+    <view class='iconBtn' bindtap='toProductFn'>
+      <image src='../../imgs/product.svg'/><text>{{txt.btns[1]}}</text>
+    </view>
+    <view class='iconBtn noBorder' bindtap='toCartFn'>
+      <image src='../../imgs/cart.svg'/><text>{{txt.btns[2]}}</text>
+      <view hidden='{{cartNum<1}}' class='added'>{{cartNum}}</view>
+    </view>
+    <!-- <button class='iconBtn noBorder' open-type='contact'>
+      <image src='../../imgs/contact.svg'/><text>{{txt.btns[2]}}</text>
+    </button> -->
+    <view class='add2cart' bindtap='add2cartFn'>{{txt.btns[3]}}</view>
+    <view class='buyNow' bindtap='toOrderFn'>{{txt.btns[4]}}</view>
+  </view>
+</view>
+
+<!-- 动画元素 -->
+<image hidden='{{hide_animaImg}}' animation="{{animation}}" class='animaImg' src='{{prodInfo.sku[selectInd].images[0]}}'></image>
+
+<!-- 固定按钮 -->
+<button open-type='contact' session-from="nickName={{uInfo.nick_name}}|avatarUrl={{uInfo.head_img_url}}|foreignid={{uId}}|referrerTitle=AGMiniApp" style="left:{{x}};top:{{y}};" class='csBtn' capture-catch:touchmove="moveFn"></button>

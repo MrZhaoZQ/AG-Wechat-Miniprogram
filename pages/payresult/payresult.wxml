@@ -1,0 +1,25 @@
+<!--pages/payresult/payresult.wxml-->
+<view class='container'>
+  <view class='result success' hidden='{{result=="fail"}}'>
+    <view class='resBox'>
+      <icon type='success' size="36" color="#58ad4c"></icon>
+      <text class='sucTxt'>{{txt.suc}}</text>
+    </view>
+    <view class='toBtns'>
+      <text class="lev1" bindtap='toCheckFn'>{{txt.toOrder}}</text>
+      <text class="lev2" bindtap='toIndexFn'>{{txt.toHome}}</text>
+    </view>
+    <button class="msgBtn" bindtap="orderMsgFn">{{txt.msgBtn}}</button>
+  </view>
+
+  <view class='result fail' hidden='{{result=="suc"}}'>
+    <view class='resBox'>
+      <icon type='warn' size="36" color='#e92f2e'></icon>
+      <text class='failTxt'>{{txt.fail}}</text>
+    </view>
+    <view class='toBtns'>
+      <text class="lev1" bindtap='toPayFn'>{{txt.toPay}}</text>
+      <text class="lev2" bindtap='toIndexFn'>{{txt.toHome}}</text>
+    </view>
+  </view>
+</view>

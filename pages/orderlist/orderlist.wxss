@@ -1,0 +1,130 @@
+/* pages/orderlist/orderlist.wxss */
+page{
+  background-color: #e6e6e6;
+}
+
+.container{
+  font-size: 26rpx;
+}
+
+.listBy{
+  width: 100%; height: 116rpx;
+  box-sizing: border-box;
+  border-top: 2rpx #f4f4f4 solid;
+  margin-bottom: 20rpx;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.listBy view{
+  flex: 1;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 28rpx;
+}
+.listBy .active{
+  color: #012856;
+  border-bottom: 2rpx #012856 solid;
+}
+
+.orderList{
+  width: 100%;
+}
+.orderList .orderItem{
+  width: 100%;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.orderList .orderItem .orderHead{
+  width: 100%; height: 96rpx;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+}
+.orderList .orderItem .orderHead text{
+  color: #012856;
+  text-align: center;
+  line-height: 28rpx;
+}
+.orderList .orderItem .prodsOfOrder{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}
+.orderList .orderItem .prodsOfOrder .prod{
+  width: 100%; height: 180rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.orderList .orderItem .prodsOfOrder .prod image{
+  width: 148rpx; height: 148rpx;
+}
+.orderList .orderItem .prodsOfOrder .prod .txtBox{
+  flex: 1;
+  margin-left: 40rpx;
+  height: 130rpx;
+  line-height: 36rpx;
+}
+.orderList .orderItem .prodsOfOrder .prod .txtBox .prodName{
+  color: #050505;
+}
+.orderList .orderItem .prodsOfOrder .prod .txtBox .prodDesc{
+  color: #7c7c7c;
+  margin-bottom: 30rpx;
+}
+.orderList .orderItem .prodsOfOrder .prod .txtBox .PandN{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.orderList .orderItem .prodsOfOrder .prod .txtBox .PandN .price{
+  color: #000;
+  font-family: "cprBold";
+  font-weight: bolder;
+}
+.orderList .orderItem .orderFoot{
+  width: 100%; height: 80rpx;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #666;
+}
+.orderList .orderItem .orderFoot .expressName{
+  margin-right: 20rpx;
+}
+.orderList .orderItem .orderFoot .expressNum{
+  color: #012856;
+}
+.orderList .orderItem .btnsBox{
+  width: 100%; height: 80rpx;
+  box-sizing: border-box;
+  border-top: 1rpx #eee solid;
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #666;
+}
+.orderList .orderItem .btnsBox .btn{
+  width: 160rpx; height: 48rpx;
+  box-sizing: border-box;
+  border-radius: 40rpx;
+  margin-left: 40rpx;
+  background: #58ad4c;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,323 @@
+/* pages/me/me.wxss */
+.container{
+  background: #fff;
+  color: #303030;
+  font-size: 26rpx;
+}
+
+.topBox{
+  width: 100%;
+  position: relative; left: 0; top: 0;
+}
+.topBox .userKV{
+  width: 750rpx; height: 350rpx;
+}
+.QRcode{
+  width: 45rpx; height: 45rpx;
+  position: absolute; right: 50rpx; top: 50rpx;
+}
+.topBox .userInfo{
+  width: 750rpx; height: 185rpx;
+  position: relative; left: 0; top: 0;
+}
+.topBox .userInfo .userPhoto{
+  width: 116rpx; height: 116rpx;
+  border-radius: 50%;
+  border: 5rpx #fff solid;
+  position: absolute; left: 50%; margin-left: -63rpx; top: -63rpx;
+}
+.topBox .userInfo .nickName{
+  width: 100%;
+  position: absolute; left: 0; top: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #000;
+  font-weight: bolder;
+}
+.topBox .userInfo .pointsBox{
+  width: 360rpx; height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; left: 195rpx; top: 126rpx;
+}
+.topBox .userInfo .pointsBox .points{
+  color: #58ad4c;
+}
+.topBox .userInfo .pointsBox image{
+  width: 28rpx; height: 28rpx;
+  margin: 0 10rpx;
+}
+
+.topBox .userInfo .signBox{
+  width: 136rpx; height: 46rpx;
+  background: #012856;
+  position: absolute; right: 0; top: 80rpx;
+  z-index: 9;
+}
+.topBox .userInfo .signBox image{
+  width: 46rpx; height: 46rpx;
+  position: absolute; left: -23rpx; top: 0;
+}
+.topBox .userInfo .signBox view{
+  width: 113rpx; height: 46rpx;
+  margin-left: 23rpx;
+  text-align: center;
+  line-height: 46rpx;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.myBox{
+  width: 670rpx;
+  margin: 0 40rpx;
+  border-radius: 20rpx;
+  background: #e6e6e6;
+}
+.myBox .order{
+  width: 100%; height: 90rpx;
+  font-size: 28rpx;
+}
+.myBox .order navigator{
+  width: 100%; height: 90rpx;
+  box-sizing: border-box;
+  padding: 0 35rpx;
+  border-bottom: 1rpx #fff solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.myBox .myList{
+  width: 100%; height: 190rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.myBox .myList .myItem{
+  flex: 1;
+  height: 100%;
+}
+.myBox .myList .myItem .itemName{
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; left: 0; top: 0;
+}
+.myBox .myList .myItem .itemName image{
+  width: 40rpx; height: 40rpx;
+  margin-bottom: 20rpx; 
+}
+.myBox .myList .myItem .itemName .shippedImg{
+  width: 46rpx; height: 46rpx;
+  margin-bottom: 17rpx;
+}
+.myBox .myList .myItem .itemName text{
+  width:100%; height: 56rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 28rpx;
+}
+.myBox .myList .myItem .itemName .num{
+  width: 28rpx; height: 28rpx;
+  border-radius: 50%;
+  background: #012856;
+  position: absolute; right: 56rpx; top: 28rpx;
+  color: #fff;
+  font-size: 16rpx;
+  text-align: center;
+  line-height: 28rpx;
+}
+
+.moreList{
+  width: 670rpx;
+  margin: 0 40rpx;
+}
+.moreList button{
+  border: none;
+  background: #fff;
+}
+.moreList .moreItem{
+  width: 100%; height: 110rpx;
+  box-sizing: border-box;
+  padding: 0 35rpx 0 0;
+  border-bottom: 1rpx #ededed solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+}
+.moreList .moreItem view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.moreList .moreItem view .cartIcon{
+  width: 34rpx; height: 34rpx;
+  margin: 0 39rpx;
+}
+.moreList .moreItem view .addressIcon{
+  width: 36rpx; height: 36rpx;
+  margin: 0 38rpx;
+}
+.moreList .moreItem view .couponIcon{
+  width: 32rpx; height: 32rpx;
+  margin: 0 40rpx;
+}
+.moreList .moreItem view .serviceIcon{
+  width: 36rpx; height: 36rpx;
+  margin: 0 38rpx;
+}
+.moreList .moreItem view .helpIcon{
+  width: 52rpx; height: 52rpx;
+  margin: 0 30rpx;
+}
+.moreList .moreItem .arr_right{
+  width: 14rpx; height: 26rpx;
+}
+
+.popupContainer{
+  width: 100%; height: 100%;
+  position: fixed; left: 0; top: 0;
+  z-index: 66;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 26rpx;
+  font-family: "AvenirNext";
+}
+
+.signPopup, .posterPopup, .prPopup{
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signPopup .content{
+  width: 672rpx; height: 950rpx;
+  border-radius: 20rpx;
+  background: #002856;
+}
+.signPopup .content .signkv{
+  width: 672rpx; height: 452rpx;
+}
+.signPopup .content .daysBox{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.signPopup .content .daysBox .day{
+ width: 144rpx; height: 138rpx;
+ margin: 0 20rpx;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+.signPopup .content .daysBox .active{
+  background: url('https://athleticgreens.fugumobile.cn/imgs/signed.png') no-repeat;
+  background-size: 100% 100%;
+}
+.signPopup .content .daysBox .day image{
+  width: 43rpx; height: 27rpx;
+  margin-bottom: 10rpx;
+}
+.signPopup .btn{
+  width: 400rpx; height: 70rpx;
+  margin: 60rpx auto 0;
+  background: #58ad4c;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 70rpx;
+}
+.closeSign, .closePoster, .closePR{
+  width: 63rpx; height: 63rpx;
+  margin: 18rpx 0 0;
+}
+
+.posterPopup .content{
+  width: 670rpx; height: 950rpx;
+  border-radius: 20rpx;
+  position: relative; left: 0; top: 0;
+}
+.posterPopup .content canvas{
+  width: 670rpx; height: 950rpx;
+}
+.posterPopup .content image{
+  width: 670rpx; height: 950rpx;
+  position: absolute; left: 0; top: 0;
+  z-index: 88;
+}
+
+.prPopup .content{
+  width: 670rpx; height: 920rpx;
+  box-sizing: border-box;
+  padding-top: 70rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: #000;
+}
+.prPopup .content .title{
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bolder;
+  font-family: "cprBold";
+}
+.prPopup .content .line{
+  width: 88rpx; height: 2rpx;
+  margin: 10rpx 0 50rpx;
+  background: #000;
+}
+.prPopup .content .desc{
+  display: block;
+  width: 588rpx;
+  text-align: center;
+  line-height: 42rpx;
+}
+.prPopup .content .rules{
+  width: 588rpx;
+  margin: 20rpx 40rpx;
+  box-sizing: border-box;
+  padding: 30rpx 35rpx;
+  border-radius: 20rpx;
+  background: #012856;
+  color: #fff;
+}
+.prPopup .content .rules .rule{
+  width: 100%;
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.prPopup .content .btmBox{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.prPopup .content .btmBox image{
+  width: 328rpx; height: 309rpx;
+}
+.prPopup .content .btmBox .exBox{
+  width: 288rpx; height: 309rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prPopup .content .btmBox .exBox text{
+  text-align: center;
+}
+.prPopup .content .btmBox .exBox .txtSpec{
+  font-weight: bolder;
+}

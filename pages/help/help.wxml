@@ -1,0 +1,13 @@
+<!--pages/help/help.wxml-->
+<view class='container'>
+  <image class='hcBanner' src='https://athleticgreens.fugumobile.cn/imgs/FAQbanner.png'></image>
+  <view class='FAQlist'>
+    <view class='FAQitem' wx:for="{{txt.qaList}}" wx:key="index">
+      <view class='itemName' data-id='{{index}}' bindtap='showOrHideFn'>
+        <text>{{item.q}}</text>
+        <view class='btn'>{{status[index]}}</view>
+      </view>
+      <text class='txtBox' style='display: {{status[index]=="-"?"block":"none"}}'>{{item.a}}</text>
+    </view>
+  </view>
+</view>

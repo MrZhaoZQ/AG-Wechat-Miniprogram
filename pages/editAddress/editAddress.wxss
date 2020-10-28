@@ -1,0 +1,85 @@
+/* pages/editAddress/editAddress.wxss */
+page{
+  background-color: #f5f5f5;
+}
+
+.editArea{
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1rpx #ddd solid;
+  font-size: 26rpx;
+}
+.editArea .name, .editArea .idCard, .editArea .mobile, .editArea .selectBox, .editArea .pstCode{
+  width: 100%; height: 80rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  border-top: 1rpx #eee solid;
+  background: #fff;
+}
+.editArea .name{
+  margin-top: 20rpx;
+}
+input{
+  width: 100%; height: 100%;
+}
+.editArea .selectBox picker{
+  width: 100%; height: 80rpx;
+}
+.editArea .selectBox picker .picker{
+  width: 100%; height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.editArea .selectBox picker .picker view{
+  flex: 1; height: 80rpx;
+  margin-right: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.editArea .selectBox picker .picker view:last-child{
+  margin-right: 0;
+}
+.editArea .selectBox picker .picker view image{
+  width: 19rpx; height: 16rpx;
+}
+.editArea .detailAddress{
+  width: 100%; height: 160rpx;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  border-top: 1rpx #eee solid;
+}
+.editArea .detailAddress textarea{
+  width: 100%; height: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+}
+.editArea .pstCode{
+  margin-bottom: 20rpx;
+}
+.editArea .defaultBox{
+  width: 100%; height: 80rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.notice{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.saveBtn{
+  width: 710rpx; height: 80rpx;
+  border-radius: 10rpx;
+  background: #012856;
+  position: fixed; left: 20rpx; bottom: 40rpx;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+}

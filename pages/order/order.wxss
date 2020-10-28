@@ -1,0 +1,277 @@
+/* pages/order/order.wxss */
+.container{
+  padding-bottom: 96rpx;
+  background: #fff;
+  font-size: 26rpx;
+}
+
+.infoBox{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 26rpx 22rpx;
+  background: #e6e6e6;
+}
+.infoBox .addressInfo{
+  width: 704rpx; height: 88rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative; left: 0; top: 0;
+}
+.infoBox .addressInfo .defAddress, .infoBox .addressInfo .noAddress{
+  width: 600rpx;
+}
+.infoBox .addressInfo .defAddress .address{
+  width: 600rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.infoBox .addressInfo image, .infoBox .invoiceInfo image{
+  width: 14rpx; height: 26rpx;
+}
+.infoBox .addressInfo image{
+  position: absolute; right: 30rpx; top: 31rpx;
+}
+.infoBox .invoiceInfo{
+  width: 100%; height: 88rpx;
+  margin-top: 15rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.infoBox .invoiceInfo .individualOrNo, .infoBox .invoiceInfo .company{
+  flex: 1;
+  box-sizing: border-box;
+  padding-right: 30rpx;
+}
+
+.prod{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 55rpx;
+}
+.prodList{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 0;
+  border-bottom: 1rpx #ebebeb solid;
+}
+.prodList .prodItem{
+  width: 100%;
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center；
+}
+.prodList .prodItem .prodImg{
+  width: 176rpx; height: 176rpx;
+  margin-right: 30rpx;
+}
+.prodList .prodItem .prodInfo{
+  flex: 1;
+  height: 176rpx;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.prodList .prodItem .exInfo, .prodList .prodItem .freeInfo{
+  padding: 40rpx 0 30rpx;
+}
+.prodList .prodItem .prodInfo .prodName{
+  width: 100%;
+}
+.prodList .prodItem .prodInfo .prodDesc{
+  width: 100%;
+  margin-bottom: 30rpx;
+  font-size: 24rpx;
+  color: #7c7c7c;
+}
+.prodList .prodItem .prodInfo .priceAndNum{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.prodList .prodItem .prodInfo .priceAndNum .price{
+  font-weight: bolder;
+  font-family: "cprBold";
+}
+
+.numBox{
+  width: 172rpx; height: 56rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.numBox .minus, .numBox .add{
+  width: 60rpx; height: 56rpx;
+  background: #eee;
+}
+.numBox .num{
+  width: 52rpx; height: 56rpx;
+}
+.numBox view{
+  text-align: center;
+  line-height: 56rpx;
+}
+
+.main{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 55rpx;
+}
+.usePoints{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+  border-bottom: 1rpx #ebebeb solid;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.usePoints .centerBox{
+  flex: 1;
+}
+.usePoints .centerBox .useTips{
+  display: block;
+  margin-top: 10rpx;
+  box-sizing: border-box;
+  padding-right: 20rpx;
+  font-size: 20rpx;
+  color: #aaa;
+  line-height: 24rpx;
+}
+.usePoints icon, .useCoupons icon{
+  margin: 2rpx 15rpx 0 0;
+}
+.useCoupons{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+  border-bottom: 1rpx #ebebeb solid;
+}
+.useCoupons .useBox{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.useCoupons .useBox .centerBox{
+  flex: 1;
+}
+.useCoupons .useBox .cpValue{
+  width:132rpx;
+  text-align: right;
+}
+.useCoupons .coupons{
+  width: 100%;
+}
+.useCode{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+  border-bottom: 1rpx #ebebeb solid;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.useCode text{
+  width: auto;
+}
+.useCode input{
+  flex: 1;
+}
+.leaveMsg{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+  border-bottom: 1rpx #ebebeb solid;
+}
+.leaveMsg textarea{
+  height: 144rpx;
+  line-height: 36rpx;
+  font-size: 26rpx;
+}
+
+.clauseTips{
+  width: 100%;
+  margin: 40rpx 0 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clauseTips navigator{
+  color: #012856;
+}
+
+.couponTips{
+  width: 100%;
+  margin: 40rpx 0 60rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.couponTips image{
+  width: 631rpx; height: 215rpx;
+  margin-bottom: 20rpx;
+}
+.couponTips text{
+  display: block;
+  width: 631rpx;
+  text-align: center;
+}
+
+.fixedBottom{
+  width: 100%; height: 96rpx;
+  background: #fff;
+  position: fixed; left: 0; bottom: 0;
+  z-index: 26;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.fixedBottom .totalBox{
+  flex: 1; height: 100%;
+  box-sizing: border-box;
+  padding: 0 55rpx;
+  border: 1rpx #012856 solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fixedBottom .totalBox .total{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fixedBottom .totalBox .total .totalNum{
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.fixedBottom .totalBox .inc{
+  width: 100%;
+  color: #012856;
+  font-size: 22rpx;
+  text-align: right;
+} 
+.fixedBottom button{
+  width: 282rpx; height: 96rpx;
+  background: #58ae4d;
+  font-size: 26rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 96rpx;
+}

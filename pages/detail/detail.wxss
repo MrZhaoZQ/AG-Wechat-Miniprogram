@@ -1,0 +1,228 @@
+/* pages/detail/detail.wxss */
+.container{
+  font-size: 26rpx;
+  padding-bottom: 136rpx;
+}
+
+.prodInfo{
+  width: 100%; height: auto;
+  padding-bottom: 60rpx;
+  background: #e6e6e6;
+  position: relative; left: 0; top: 0;
+}
+.prodInfo swiper{
+  width: 750rpx; height: 750rpx;
+}
+.prodInfo swiper swiper-item .swiperImg{
+  width: 750rpx; height: 750rpx;
+}
+.prodInfo swiper swiper-item .tsImg{
+  width: 750rpx; height:107rpx;
+  position: absolute; left: 0; bottom: 0;
+  z-index: 16;
+}
+.prodInfo swiper .wx-swiper-dot{
+  width: 36rpx; height: 6rpx;
+  border-radius: 0;
+  background: #c9c9c9;
+}
+.prodInfo swiper .wx-swiper-dot-active{
+  background: #4daa3e;
+}
+.prodInfo .share{
+  width: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute; right: 20rpx; top: 40rpx;
+}
+.prodInfo .share image{
+  width: 44rpx; height: 40rpx;
+}
+.prodInfo .share text{
+  line-height: 36rpx;
+  font-size: 26rpx;
+}
+.prodInfo .prodName{
+  width: 100%;
+  margin: 40rpx 0 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #000;
+}
+.prodInfo .prodInc{
+  width: 100%;
+  margin-bottom: 20rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #000;
+}
+.prodInfo .prodPrice{
+  width: 100%;
+  text-align: center;
+  font-size: 40rpx;
+  color: #012856;
+  font-family: "cprBold";
+  font-weight:bolder;
+}
+.prodInfo .priceBox{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prodInfo .priceBox .promo_price{
+  position: relative; left: 0; top: 0;
+  font-size: 40rpx;
+  color: #012856;
+  font-weight: bolder;
+  font-family: "cprBold";
+}
+.prodInfo .priceBox .promo_price .old_price{
+  position: absolute; left: 110%; bottom: 4%;
+  font-size: 32rpx;
+  color: #012856;
+  text-decoration: line-through;
+  font-family: "cprBold";
+}
+.prodInfo .buyTips{
+  width: 494rpx;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 22rpx;
+  color: #012856;
+}
+.prodInfo .prodGift{
+  width: 100%;
+  margin: 20rpx 0;
+  text-align: center;
+  font-size: 26rpx;
+  color: #000;
+}
+.prodInfo picker{
+  width: 494rpx; height: 70rpx;
+  margin: 30rpx 0 10rpx;
+  box-sizing: border-box;
+  border: 2rpx #9b9b9b solid;
+  border-radius: 10rpx;
+  padding: 0 40rpx;
+  position: relative; left: 128rpx; top: 0;
+}
+.prodInfo picker .picker{
+  width: 88%; height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  line-height: 70rpx;
+}
+.prodInfo picker image{
+  width: 19rpx; height: 16rpx;
+  position: absolute; right: 40rpx; top: 27rpx;
+}
+
+.prodIntro{
+  width: 100%;
+  background: #fff;
+}
+.prodIntro .introItem{
+  width: 100%;
+  border-bottom: 2rpx #e6e6e6 solid;
+}
+.prodIntro .introItem .itemName{
+  width: 100%; height: 96rpx;
+  box-sizing: border-box;
+  padding-left: 56rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.prodIntro .introItem .itemName text{
+  color: #012856;
+  font-size: 28rpx;
+}
+.prodIntro .introItem .itemName .btn{
+  height: 100%;
+  padding: 0 56rpx;
+  line-height: 96rpx;
+  font-weight: bolder;
+  font-size: 32rpx;
+  color: #012856;
+}
+.prodIntro .introItem .txtBox{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 56rpx 30rpx;
+}
+
+.btns{
+  width: 100%; height: 96rpx;
+  background: #fff;
+  box-shadow: 0 -8rpx 6rpx #e4e4e4;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed; left: 0; bottom: 0;
+  z-index: 66;
+}
+.btns .iconBtn{
+  width: 110rpx; height: 68rpx;
+  border-right: 2rpx #e4e4e4 solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14rpx;
+}
+.btns .iconBtn image{
+  width: 28rpx; height: 28rpx;
+  margin-bottom: 10rpx;
+}
+.btns .iconBtn text{
+  line-height: 24rpx;
+}
+.btns .noBorder{
+  border-right: none;
+  color: #000;
+  position: relative; left: 0; top: 0;
+}
+.btns .noBorder .added{
+  width: 28rpx; height: 28rpx;
+  background: #58ad4c;
+  border-radius: 50%;
+  position: absolute; left: 60rpx; top: -10rpx;
+  text-align: center;
+  line-height: 28rpx;
+  font-size: 18rpx;
+  color: #fff;
+}
+.btns .add2cart{
+  width: 240rpx; height: 100%;
+  box-sizing: border-box;
+  border: 1rpx #012856 solid;
+  text-align: center;
+  line-height: 96rpx;
+  color: #012856;
+}
+.btns .buyNow{
+  width: 180rpx; height: 100%;
+  background: #58ad4c;
+  text-align: center;
+  line-height: 96rpx;
+  color: #fff;
+}
+
+.csBtn{
+  width: 127rpx; height: 127rpx;
+  background: url(https://athleticgreens.fugumobile.cn/imgs/service.png) no-repeat;
+  background-size: 100% 100%;
+  position: fixed; right: 0; bottom: 396rpx;
+  z-index: 66;
+}
+
+.animaImg{
+  width: 650rpx; height: 650rpx;
+  position: fixed; left: 50rpx; top: 100rpx;
+  z-index: 86;
+}

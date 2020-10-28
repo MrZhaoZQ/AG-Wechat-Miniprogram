@@ -1,0 +1,164 @@
+<!--pages/order/order.wxml-->
+<view class='container'>
+  <!-- address and invoice -->
+  <view class='infoBox'>
+    <view class='addressInfo' bindtap='toAddressFn'>
+      <view class='defAddress' hidden='{{addressId==""}}'>
+        <view class='addressee'>{{address.user_name}}</view>
+        <view class="address">{{address.province+address.city+address.region+address.address}}</view>
+      </view>
+      <view class='noAddress' hidden='{{addressId}}'>{{txt.noAddr}}</view>
+      <image src='../../imgs/arr_right.jpg'></image>
+    </view>
+    <!-- <view class='invoiceInfo' bindtap='toInvoiceFn'>
+      <view class='individualOrNo' hidden='{{invoiceType=="company"}}'>{{individualOrNo}}</view>
+      <view class='company' hidden='{{invoiceType!="company"}}'>
+        <view class='gstt'>{{gstt}}</view>
+        <view class="qysh">{{qysh}}</view>
+      </view>
+      <image src='../../imgs/arr_right.jpg'></image>
+    </view> -->
+  </view>
+
+  <!-- prodlist -->
+  <view class='prod'>
+    <view class='prodList'>
+
+      <view class='prodItem' wx:for='{{prodlist}}' wx:key='index'>
+        <image class='prodImg' src='{{item.product_images}}'></image>
+        <view class='prodInfo'>
+          <view class='prodName'>{{item.product_name}}</view>
+          <view class='prodDesc'>{{item.sku.title}}</view>
+          <view wx:if='{{item.price!=0}}' class='priceAndNum'>
+            <view class='price'>¥{{item.price}}</view>
+            <view class='numBox'>
+              <view class='minus' data-id='{{item.sku.id}}' data-type='buy' bindtap='minusFn'>-</view>
+              <view class='num'>{{item.product_num}}</view>
+              <view class='add' data-id='{{item.sku.id}}' data-type='buy' bindtap='addFn'>+</view>
+            </view>
+          </view>
+          <view wx:else class='priceAndNum'>
+            <view class='price'>¥{{item.price}}</view>
+            <view class='num'>{{item.product_num}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='prodItem' wx:for='{{subedlist}}' wx:key='index'>
+        <image class='prodImg' src='{{item.product_images}}'></image>
+        <view class='prodInfo'>
+          <view class='prodName'>{{item.product_name}}</view>
+          <view class='prodDesc'>{{item.sku.title}}</view>
+          <view class='priceAndNum'>
+            <view class='price'>¥{{item.price}}</view>
+            <view class='numBox'>
+              <view class='minus' data-id='{{item.sku.id}}' data-type='subed' bindtap='minusFn'>-</view>
+              <view class='num'>{{item.product_num}}</view>
+              <view class='add' data-id='{{item.sku.id}}' data-type='subed' bindtap='addFn'>+</view>
+            </view>
+          </view>
+          <!-- <view wx:if='{{item.price!=0}}' class='priceAndNum'>
+            <view class='price'>¥{{item.price}}</view>
+            <view class='numBox'>
+              <view class='minus' data-id='{{item.sku.id}}' data-type='subed' bindtap='minusFn'>-</view>
+              <view class='num'>{{item.product_num}}</view>
+              <view class='add' data-id='{{item.sku.id}}' data-type='subed' bindtap='addFn'>+</view>
+            </view>
+          </view>
+          <view wx:else class='priceAndNum'>
+            <view class='price'>¥{{item.price}}</view>
+            <view class='num'>{{item.product_num}}</view>
+          </view> -->
+        </view>
+      </view>
+
+      <view class='prodItem' style='display:{{usePts?"flex":"none"}}'>
+        <image class='prodImg' src='https://athleticgreens.fugumobile.cn/imgs/giftProd.jpg'></image>
+        <view class='prodInfo exInfo'>
+          <view class='prodName'>{{txt.giftName}}</view>
+          <view class='priceAndNum'>
+            <view class='price'>{{txt.exchange}}</view>
+            <view class='num'>{{exNum}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='prodItem' wx:for='{{promolist}}' wx:key='index' style='display:{{item.product_num>0?"flex":"none"}}'>
+        <image class='prodImg' src='{{item.product_images}}'></image>
+        <view class='prodInfo exInfo'>
+          <view class='prodName'>{{item.product_name}}</view>
+          <view class='priceAndNum'>
+            <view class='price'>{{item.price}}</view>
+            <view class='num'>{{item.product_num}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='prodItem' style='display:{{giftNum<1?"none":"flex"}}'>
+        <image class='prodImg' src='https://athleticgreens.fugumobile.cn/imgs/giftProd.jpg'></image>
+        <view class='prodInfo freeInfo'>
+          <view class='prodName'>{{txt.giftName}}</view>
+          <view class='priceAndNum'>
+            <view class='price'>{{txt.free}}</view>
+            <view class='num'>{{giftNum}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- use points and coupon and leave message -->
+  <view class='main'>
+    <view class='usePoints' style='display: {{points>=100?"flex":"none"}}' bindtap='usePtsFn'>
+      <icon type='{{usePts?"success":"circle"}}' size='16' color='#012856'></icon>
+      <view class='centerBox'>
+        <view>{{txt.usePt}}({{txt.remain}}: <text>{{points-100*exNum}}pts</text>)</view>
+        <text class='useTips'>{{txt.pTip}}</text>
+      </view>
+      <view class='numBox'>
+        <view class='minus' data-type='exchange' catchtap='minusFn'>-</view>
+        <view class='num'>{{exNum}}</view>
+        <view class='add' data-type='exchange' catchtap='addFn'>+</view>
+      </view>
+    </view>
+    <view class='useCoupons' hidden='{{coupons.length<1}}'>
+      <view class='useBox' catchtap='useCpsFn'>
+        <icon type='{{useCps?"success":"circle"}}' size='16' color='#012856'></icon>
+        <view class='centerBox'>{{txt.useCp}}({{txt.remain}}: {{coupons.length-cpNum}})</view>
+        <view class='numBox'>
+          <view class='minus' data-type='useCps' catchtap='minusFn'>-</view>
+          <view class='num'>{{cpNum}}</view>
+          <view class='add' data-type='useCps' catchtap='addFn'>+</view>
+        </view>
+      </view>
+      <view class='coupons'></view>
+    </view>
+    <view class="useCode">
+      <text>{{txt.codeName}}：</text>
+      <input bindblur="blurFn" value="{{code}}" bindinput='codeIptFn' placeholder="{{txt.codeTip}}" placeholder-style="font-size: 24rpx;"></input>
+    </view>
+    <view class='leaveMsg'>
+      <textarea placeholder='{{txt.leaveMsg}}' placeholder-style="font-size: 24rpx;" value='{{msg}}' bindinput='msgIptFn'></textarea>
+    </view>
+  </view>
+
+  <view class="clauseTips" hidden="{{!showClause}}">
+    <checkbox bindtap="changeFn" value="clause" checked="{{checkedCluase}}"/>
+    <navigator url="../clause/clause"><text>{{txt.clauseTxt}}</text></navigator>
+  </view>
+
+  <view class='couponTips'>
+    <image src='https://athleticgreens.fugumobile.cn/imgs/voucher.png'></image>
+    <text>{{txt.cTip}}</text>
+  </view>
+
+  <!-- fixed bottom -->
+  <view class='fixedBottom {{ix?"isX":""}}'>
+    <view class='totalBox'>
+      <view class='total'>
+        <text>Total: </text>
+        <view class='totalNum'>¥{{total<0?"0":total+""}}</view>
+      </view>
+      <view class='inc'>inc. shipping & taxes</view>
+    </view>
+    <button bindtap='submitFn'>SUBMIT NOW</button>
+  </view>
+</view>

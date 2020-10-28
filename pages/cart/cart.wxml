@@ -1,0 +1,47 @@
+<!--pages/cart/cart.wxml-->
+<view class='container'>
+  <image class='kv' src='https://athleticgreens.fugumobile.cn/imgs/cartkv.png'></image>
+  <view class='topBar'>
+    <view class='subtitle'>{{txt.title}}</view>
+    <view class='delete' bindtap='deleteFn'>
+      <image src='../../imgs/delete.png'></image>{{txt.del}}
+    </view>
+  </view>
+  <view class='prodList'>
+    <view class='prodItem' wx:for='{{prodsOfCart}}' wx:key='index'>
+      <image class='prodImg' id='{{item.product_id}}' bindtap='toDetailFn' src='{{item.product_images}}' />
+      <view class='prodInfo'>
+        <view class='prodName'>{{item.product_name}}</view>
+        <view class='prodDesc'>{{item.sku.title}}</view>
+        <view wx:if="{{item.product_type=='gift'}}" class='priceAndNum'>
+          <view class='price'>{{txt.gift}}</view>
+          <view class='num'>{{item.product_num}}</view>
+        </view>
+        <view wx:elif="{{item.product_type=='subscribed'}}" class='priceAndNum'>
+          <view class='price'>¥{{item.price}}</view>
+          <view class='num'>{{item.product_num}}</view>
+        </view>
+        <view wx:else class='priceAndNum'>
+          <view class='price'>¥{{item.price}}</view>
+          <view class='numBox'>
+            <view data-id='{{item.product_id}}' data-skuid='{{item.sku.id}}' class='minus' bindtap='minusFn'>-</view>
+            <view class='num'>{{item.product_num}}</view>
+            <view data-id='{{item.product_id}}' data-skuid='{{item.sku.id}}' class='add' bindtap='addFn'>+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- fixed bottom -->
+  <view class='fixedBottom {{ix?"isX":""}}'>
+    <view class='totalBox'>
+      <view class='total'>
+        <text>{{txt.total}}: </text>
+        <view class='totalNum'>¥{{total}}</view>
+      </view>
+      <view class='inc'>{{txt.inc}}</view>
+    </view>
+    <button bindtap='toOrderFn'>{{txt.btn}}</button>
+  </view>
+</view>

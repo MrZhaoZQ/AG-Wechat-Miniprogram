@@ -1,0 +1,110 @@
+/* pages/product/product.wxss */
+page{
+  background: #e6e6e6;
+}
+
+.container{
+  font-size: 26rpx;
+}
+
+.topBar{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.topBar .logo{
+  width: 237rpx; height: 190rpx;
+}
+.topBar text{
+  width: 100%;
+  margin: 40rpx 0 6rpx;
+  display: block;
+  text-align: center;
+  line-height: 56rpx;
+  font-size: 32rpx;
+  font-family: "cprBold";
+  font-weight:bolder;
+}
+.topBar .line{
+  width: 86rpx; height: 4rpx;
+  margin-bottom: 30rpx;
+  background: #000;
+}
+
+.prodList{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.prodList .prodItem{
+  width: 345rpx; height: 530rpx;
+  margin-bottom: 28rpx;
+}
+.prodList .prodItem:nth-child(odd){
+  margin-right: 20rpx;
+}
+.prodList .prodItem:nth-child(even){
+  margin-right: 0;
+}
+.prodList .prodItem image{
+  width: 345rpx; height: 345rpx;
+  /* box-sizing: border-box;
+  border: 1rpx #dadada solid;
+  border-bottom: none; */
+  border-radius: 20rpx 20rpx 0 0;
+}
+.prodList .prodItem .prodBox{
+  width: 100%; height: 185rpx;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  border-radius: 0 0 20rpx 20rpx;
+  background: #fff;
+}
+.prodList .prodItem .prodBox .prod{
+  width: 100%; height: 36rpx;
+  text-align: center;
+  line-height: 36rpx;
+  color: #050505;
+}
+.prodList .prodItem .prodBox .desc{
+  width: 100%; height: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+  color: #7c7c7c;
+}
+.prodList .prodItem .prodBox .price{
+  width: 100%;
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #012856;
+  font-weight:bolder;
+  font-family: "cprBold";
+}
+.prodList .prodItem .prodBox .priceBox{
+  width: 100%;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prodList .prodItem .prodBox .promo_price{
+  position: relative; left: 0; top: 0;
+  font-size: 32rpx;
+  color: #012856;
+  font-weight: bolder;
+  font-family: "cprBold";
+}
+.prodList .prodItem .prodBox .promo_price .old_price{
+  position: absolute; left: 110%; bottom: 4%;
+  font-size: 26rpx;
+  color: #012856;
+  text-decoration: line-through;
+  font-family: "cprBold";
+}

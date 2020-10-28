@@ -1,0 +1,44 @@
+<!--pages/editAddress/editAddress.wxml-->
+<view class='containter'>
+
+  <view class='editArea'>
+    <view class='name'>
+      <input bindinput='nameIptFn' type='text' value='{{name}}' placeholder='{{txt.name}}'></input>
+    </view>
+    <view class='idCard'>
+      <input bindinput='idCardIptFn' type='text' value='{{idCard}}' placeholder='{{txt.idCard}}'></input>
+    </view>
+    <view class='mobile'>
+      <input bindinput='mobileIptFn' type='number' value='{{mobile}}' placeholder='{{txt.phone}}'></input>
+    </view>
+    <view class='selectBox'>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" 
+      custom-item="{{customItem}}" >
+        <view class="picker">
+          <view>
+            <text>{{region[0]}}</text><image src='../../imgs/select.png'></image>
+          </view>
+          <view>
+            <text>{{region[1]}}</text><image src='../../imgs/select.png'></image>
+          </view>
+          <view>
+            <text>{{region[2]}}</text><image src='../../imgs/select.png'></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view class='detailAddress'>
+      <textarea bindinput='addressIptFn' value='{{address}}' placeholder='{{txt.detail}}'></textarea>
+    </view>
+    <view class='pstCode'>
+      <input bindinput='pstCodeIptFn' type='text' value='{{pstCode}}' placeholder='{{txt.pstCode}}'></input>
+    </view>
+    <view class='defaultBox' bindtap='isDefaultFn'>
+      <text>{{txt.setDef}}</text>
+      <icon type="{{isDefault==1?'success':'circle'}}" size="18" color='#012856'/>
+    </view>
+    <view class='notice'>{{txt.notice}}</view>
+    <view bindtap='saveFn' class='saveBtn'>{{txt.save}}</view>
+  </view>
+
+</view>

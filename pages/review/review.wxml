@@ -1,0 +1,38 @@
+<!--pages/review/review.wxml-->
+<view class='container'>
+  <view class='topSec'>
+    <view class='title'>{{txt.title}}</view>
+    <view class='descBox'>
+      <image class='yh1' src='../../imgs/yh1.png'></image>
+      <view>{{txt.desc}}</view>
+      <image class='yh2' src='../../imgs/yh2.png'></image>
+    </view>
+    <view class='customer'>
+      <view class='infoBox'>
+        <view>{{txt.customer.name}}</view>
+        <text>{{txt.customer.resume}}</text>
+      </view>
+      <image src='https://athleticgreens.fugumobile.cn/imgs/v2020/customer.png'></image>
+    </view>
+  </view>
+  <view class='btmSec'>
+    <!-- <view class='reviewBox' wx:for='{{txt.more}}' wx:key="index">
+      <view class='topBox'>
+        <view class='name'>{{item.name}}</view>
+        <view class='starsBox'>
+          <image wx:for='{{5}}' wx:key='index' src='{{index>5?"../../imgs/graystar.png":"../../imgs/greenstar.png"}}'></image>
+        </view>
+      </view>
+      <text class='reviewTxt'>{{item.review}}</text>
+    </view> -->
+    <view class='reviewBox' wx:for='{{list}}' wx:for-item="fdItem" wx:key="index">
+      <view class='topBox'>
+        <view class='name'>{{fdItem.nick_name}}</view>
+        <view class='starsBox'>
+          <image wx:for='{{5}}' wx:key='index' src='{{index>=fdItem.level?"../../imgs/graystar.png":"../../imgs/greenstar.png"}}'></image>
+        </view>
+      </view>
+      <text class='reviewTxt'>{{fdItem.comment}}</text>
+    </view>
+  </view>
+</view>

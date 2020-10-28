@@ -1,0 +1,63 @@
+/* pages/payresult/payresult.wxss */
+.container{
+  font-size: 28rpx;
+}
+
+.result{
+  width: 100%;
+}
+
+.resBox{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 160rpx 0 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.resBox icon{
+  margin-bottom: 20rpx;
+}
+.resBox .sucTxt{
+  color: #58ad4c;
+  font-size: 32rpx;
+}
+.resBox .failTxt{
+  color: #e92f2e;
+  font-size: 32rpx;
+}
+
+.toBtns{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 45rpx;
+}
+.toBtns text{
+  width: 660rpx; height: 88rpx;
+  box-sizing: border-box;
+  border-radius: 52rpx;
+  display: block;
+  text-align: center;
+  line-height: 88rpx;
+}
+.toBtns .lev1{
+  margin-bottom: 30rpx;
+  border: 1rpx #58ad4c solid;
+  color: #58ad4c;
+}
+.toBtns .lev2{
+  margin-bottom: 30rpx;
+  border: 1rpx #d6d6d6 solid;
+  color: #000;
+}
+.msgBtn{
+  width: 660rpx; height: 88rpx;
+  margin: 168rpx auto 0;
+  border-radius: 52rpx;
+  background: #58ad4c;
+  text-align: center;
+  line-height: 88rpx;
+  color: #fff;
+  font-size: 26rpx;
+}

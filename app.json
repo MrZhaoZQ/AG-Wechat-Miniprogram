@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/product/product",
+    "pages/me/me",
+    "pages/cart/cart",
+    "pages/detail/detail",
+    "pages/order/order",
+    "pages/invoice/invoice",
+    "pages/orderlist/orderlist",
+    "pages/address/address",
+    "pages/editAddress/editAddress",
+    "pages/intro/intro",
+    "pages/review/review",
+    "pages/coupon/coupon",
+    "pages/feedback/feedback",
+    "pages/help/help",
+    "pages/payresult/payresult",
+    "pages/clause/clause"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#012856",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "HOME",
+        "iconPath": "imgs/home.png",
+        "selectedIconPath": "imgs/home_s.png"
+      },
+      {
+        "pagePath": "pages/product/product",
+        "text": "PRODUCT",
+        "iconPath": "imgs/product.png",
+        "selectedIconPath": "imgs/product_s.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "ME",
+        "iconPath": "imgs/me.png",
+        "selectedIconPath": "imgs/me_s.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

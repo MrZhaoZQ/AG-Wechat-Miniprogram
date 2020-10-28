@@ -1,0 +1,9 @@
+<!--components/qrcode/qrcode.wxml-->
+<view class='qrcodeBox' hidden='{{qrcodeHidden}}' catch:tap='hide'>
+  <view class='content'catch:tap='show'>
+    <image class='qrcode' bindlongtap='saveQRFn' src='https://athleticgreens.fugumobile.cn/imgs/csQR.jpg'></image>
+    <text class='tipsTxt tipsEn'>Please take a screen shot and \n scan in WeChat to contact service centre</text>
+    <text class='tipsTxt tipsCn'>请截图后在微信中扫码添加客服</text>
+  </view>
+  <image class='closeQRcode' src='../../imgs/close.png'></image>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/coupon/coupon.wxml-->
+<view class='container'>
+  <image class='couponKV' src='https://athleticgreens.fugumobile.cn/imgs/ckv.png'></image>
+  <view class='couponList'>
+    <!-- <view class='couponItem'>
+      <image src='https://athleticgreens.fugumobile.cn/imgs/voucher.jpg'></image>
+      <view class='voucher'>voucher</view>
+      <view class='val'>￥120</view>
+      <text class='timeEn'>Validity: from July 1, 2019 to July 31, 2019</text>
+      <text class='timeCn'>有效期：2019年7月1日至2019年7月31日</text>
+    </view> -->
+    <view class='couponItem' wx:for='{{list}}' wx:key='index'>
+      <image src='{{item.coupon_img}}'></image>
+      <view class='voucher'>voucher</view>
+      <view class='val'>￥{{item.amount}}</view>
+      <text class='timeEn'>Validity: from {{item.start_time_en}} to {{item.end_time_en}}</text>
+      <text class='timeCn'>有效期：{{item.start_time}}至{{item.end_time}}</text>
+    </view>
+  </view>
+</view>

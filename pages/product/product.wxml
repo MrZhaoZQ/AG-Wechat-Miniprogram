@@ -1,0 +1,28 @@
+<!--pages/product/product.wxml-->
+<view class='container'>
+  <view class='topBar'>
+    <image class='logo' src='https://athleticgreens.fugumobile.cn/imgs/logo_new.png'></image>
+    <text>PRODUCTS</text>
+    <view class='line'></view>
+  </view>
+  <view class='prodList'>
+    <view class='prodItem' wx:for="{{prods}}" wx:key="index" id='{{item.menuId}}' bindtap='toDetailFn'>
+      <image src="{{item.image}}" />
+      <view class='prodBox'>
+        <view class='prod'>{{item.name}}</view>
+        <view class='desc'>{{item.desc}}</view>
+        <block wx:if="{{item.discount_price}}">
+          <view class="priceBox">
+            <text class="promo_price">¥{{item.discount_price}}<text class='old_price'>¥{{item.price}}</text></text>
+          </view>
+        </block>
+        <block wx:else>
+          <view class='price'>{{item.price_type=="From"?"From ":""}}¥{{item.price}}{{item.price_type=="起"?" 起":""}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 自定义组件authorize -->
+<authorize authorize-hidden="{{is_authorize_Hidden}}" />

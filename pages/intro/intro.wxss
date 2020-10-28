@@ -1,0 +1,279 @@
+/* pages/intro/intro.wxss */
+page{
+  background: #f7f8fa;
+}
+
+.container{
+  padding-bottom: 120rpx;
+  font-size: 26rpx;
+  color: #012856;
+}
+
+.title{
+  display: block;
+  width: 100%;
+  margin: 36rpx 0;
+  text-align: center;
+  font-size: 40rpx;
+  font-family: "cprBold";
+  font-weight: bolder;
+}
+
+.one{
+  width: 750rpx; height: 1158rpx;
+  background: url("https://athleticgreens.fugumobile.cn/imgs/IBbg.jpg") no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.one .desc{
+  width: 526rpx;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 28rpx;
+}
+
+.two{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 68rpx 45rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.two .icsItem{
+  width: 100%;
+  border-top: 2rpx #e6e6e6 solid;
+}
+.two .icsItem:last-of-type{
+  border-bottom: 2rpx #e6e6e6 solid;
+}
+.two .icsItem .itemName{
+  width: 100%; height: 96rpx;
+  box-sizing: border-box;
+  padding-left: 36rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.two .icsItem .itemName text{
+  color: #012856;
+  font-size: 28rpx;
+  font-weight: bolder;
+}
+.two .icsItem .itemName .btn{
+  height: 100%;
+  padding: 0 36rpx;
+  line-height: 96rpx;
+  font-weight: bolder;
+  font-size: 36rpx;
+  color: #012856;
+}
+.two .icsItem .txtBox{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6rpx 36rpx 30rpx;
+}
+.icsImgList{
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.icsImgList .imgItem{
+  width: 250rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 68rpx;
+}
+.icsImgList .imgItem image{
+  width: 80rpx; height: 80rpx;
+  margin-bottom: 20rpx;
+}
+.icsImgList .imgItem text{
+  display: block;
+  color: #00966c;
+}
+.checkBtn{
+  width: 670rpx; height: 130rpx;
+  margin: 40rpx auto 100rpx;
+  border-radius: 76rpx;
+  background: #58ad4c;
+  position: relative; left: 0; top: 0;
+}
+.checkBtn .btnTxt{
+  width: 670rpx; height: 130rpx;
+  text-align: center;
+  line-height: 130rpx;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+.checkBtn .btnImg01{
+  width: 156rpx; height: 202rpx;
+  position: absolute; left: 20rpx; top: -36rpx;
+}
+.checkBtn .btnImg02{
+  width: 56rpx; height: 56rpx;
+  position: absolute; right: 56rpx; top: 37rpx;
+}
+
+.three{
+  width: 100%; height: auto;
+  margin-bottom: 100rpx;
+}
+.threeBox{
+  width: 100%; height: auto;
+  box-sizing: border-box;
+  padding: 0 45rpx;
+}
+.threeBox swiper{
+  width: 100%; height: auto;
+  margin-bottom: 46rpx;
+}
+.threeBox swiper swiper-item{
+  width: 100%; height: auto;
+}
+.threeBox swiper swiper-item .swpList{
+  width: 100%; height: auto;
+  box-sizing: border-box;
+  border-top: 2rpx #e5e5e5 solid;
+}
+.threeBox swiper swiper-item .swpList .swpItem{
+  width: 100%; height: auto;
+  margin-bottom: 10rpx;
+  background: #fff;
+  box-sizing: border-box;
+  border-bottom: 2rpx #e5e5e5 solid;
+}
+.threeBox swiper swiper-item .swpList .swpItem .itemHead{
+  width: 100%; height: 112rpx;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #012856;
+  line-height: 112rpx;
+  font-weight: bolder;
+}
+.threeBox swiper swiper-item .swpList .swpItem .itemHead .mark{
+  font-size: 36rpx;
+}
+.threeBox swiper swiper-item .swpList .swpItem .itemChild{
+  width: 100%; height: auto;
+  box-sizing: border-box;
+  padding: 16rpx 36rpx 46rpx;
+}
+.threeBox swiper swiper-item .swpList .swpItem .itemChild image{
+  width: 240rpx; height: 240rpx;
+}
+.threeBox swiper swiper-item .swpList .swpItem .itemChild .itemDesc{
+  width: 100%; height: auto;
+  display: block;
+  margin: 10rpx 0;
+}
+.threeBox swiper swiper-item .swpList .swpItem .itemChild .keywords{
+  width: 100%; height: auto;
+  display: block;
+  margin: 10rpx 0;
+  color: #00966c;
+  font-size: 26rpx;
+  font-weight: bolder;
+}
+.threeBox .dots{
+  width: 100%; height: 56rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.threeBox .dots .dot{
+  width: 16rpx; height: 16rpx;
+  margin: 6rpx;
+  border-radius: 50%;
+  background: #e1e1e1;
+}
+.threeBox .dots .active{
+  background: #012856;
+}
+
+.four{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 35rpx;
+}
+.four .fourItem{
+  width: 100%;
+  margin-bottom: 80rpx;
+}
+.four .fourItem image{
+  width: 100%; height: auto;
+}
+.four .fourItem image.specImg{
+  width: 200rpx;
+  margin: 0 auto;
+}
+.four text{
+  display: block;
+}
+.four .subtitle{
+  width: 100%;
+  margin: 36rpx 0;
+  font-size: 32rpx;
+  font-family: "cprBold";
+  font-weight: bolder;
+}
+
+.popupContainer{
+  width: 100%; height: 100%;
+  position: fixed; left: 0; top: 0;
+  z-index: 66;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 26rpx;
+  font-family: "AvenirNext";
+}
+.popup{
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.popup .content{
+  width: 680rpx; height: 1020rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  padding: 20rpx 0;
+  background: #fff;
+}
+.popup .content .imgsBox{
+  width: 680rpx; height: 980rpx;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.popup .content .imgsBox::-webkit-scrollbar{
+  width:0px; height:0px;
+}
+.popup .content .imgsBox .IB1{
+  width: 680rpx; height: auto;
+  /* height: 1078rpx; */
+}
+.popup .content .imgsBox .IB2{
+  width: 680rpx; height: auto;
+  /* height: 1335rpx; */
+}
+.closePopup{
+  width: 63rpx; height: 63rpx;
+  margin: 38rpx 0;
+}

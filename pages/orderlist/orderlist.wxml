@@ -1,0 +1,153 @@
+<!--pages/orderlist/orderlist.wxml-->
+<view class='container'>
+  <!-- orderlist types -->
+  <view class='listBy'>
+    <view wx:for="{{tabs}}" wx:key="*this" id="{{index}}" class='{{activeIndex==index?"active":""}}' bindtap='tabClick'>{{item}}</view>
+  </view>
+
+  <!-- 全部 orderlist -->
+  <view class='orderList' hidden='{{activeIndex!=0}}'>
+    <view class='orderItem' bindtap='toOrderDetailFn' wx:for='{{all}}' wx:key='{{item.orderno}}'>
+      <view class='orderHead'>
+        <view>{{txt.orderNo}}：{{item.orderno}}</view>
+        <text class='statusTxt'>{{txt.statusTxt[item.status]}}</text>
+      </view>
+      <view class='prodsOfOrder'>
+        <view class='prod' wx:for='{{item.productlist}}' wx:for-item="prod" wx:key='{{prod.prodId}}'>
+          <image src='{{prod.image}}'></image>
+          <view class='txtBox'>
+            <view class='prodName'>{{prod.name}}</view>
+            <view class='prodDesc'>{{prod.sku.title}}</view>
+            <view class='PandN'>
+              <view class='price'>{{prod.price>0?"¥":""}}{{prod.price}}</view>
+              <view class='num'>x {{prod.num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='orderFoot' style='display: {{item.courierref?"flex":"none"}}'>
+        <text>{{item.couriername}} {{txt.expressNo}}：</text><text selectable='true' class='expressNum'>{{item.courierref}}</text>
+      </view>
+      <view class='btnsBox'>
+        <view data-id='{{item.orderno}}' class='btn' wx:for='{{txt.btnTxt[item.status]}}' wx:for-item="btn" wx:key='index' data-type='{{btn}}' catchtap='btnFn'>{{btn}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 待付款 orderlist -->
+  <view class='orderList' hidden='{{activeIndex!=1}}'>
+    <view class='orderItem' bindtap='toOrderDetailFn' wx:for='{{dfk}}' wx:key='{{item.orderno}}'>
+      <view class='orderHead'>
+        <view>{{txt.orderNo}}：{{item.orderno}}</view>
+        <text class='statusTxt'>{{txt.statusTxt[item.status]}}</text>
+      </view>
+      <view class='prodsOfOrder'>
+        <view class='prod' wx:for='{{item.productlist}}' wx:for-item="prod" wx:key='{{prod.prodId}}'>
+          <image src='{{prod.image}}'></image>
+          <view class='txtBox'>
+            <view class='prodName'>{{prod.name}}</view>
+            <view class='prodDesc'>{{prod.sku.title}}</view>
+            <view class='PandN'>
+              <view class='price'>{{prod.price>0?"¥":""}}{{prod.price}}</view>
+              <view class='num'>x {{prod.num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='orderFoot' style='display: {{item.courierref?"flex":"none"}}'>
+        <text>{{item.couriername}} {{txt.expressNo}}：</text><text selectable='true' class='expressNum'>{{item.courierref}}</text>
+      </view>
+      <view class='btnsBox'>
+        <view data-id='{{item.orderno}}' class='btn' wx:for='{{txt.btnTxt[item.status]}}' wx:for-item="btn" wx:key='index' data-type='{{btn}}' catchtap='btnFn'>{{btn}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 待发货 orderlist -->
+  <view class='orderList' hidden='{{activeIndex!=2}}'>
+    <view class='orderItem' bindtap='toOrderDetailFn' wx:for='{{dfh}}' wx:key='{{item.orderno}}'>
+     <view class='orderHead'>
+        <view>{{txt.orderNo}}：{{item.orderno}}</view>
+        <text class='statusTxt'>{{txt.statusTxt[item.status]}}</text>
+      </view>
+      <view class='prodsOfOrder'>
+        <view class='prod' wx:for='{{item.productlist}}' wx:for-item="prod" wx:key='{{prod.prodId}}'>
+          <image src='{{prod.image}}'></image>
+          <view class='txtBox'>
+            <view class='prodName'>{{prod.name}}</view>
+            <view class='prodDesc'>{{prod.sku.title}}</view>
+            <view class='PandN'>
+              <view class='price'>{{prod.price>0?"¥":""}}{{prod.price}}</view>
+              <view class='num'>x {{prod.num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='orderFoot' style='display: {{item.courierref?"flex":"none"}}'>
+        <text>{{item.couriername}} {{txt.expressNo}}：</text><text selectable='true' class='expressNum'>{{item.courierref}}</text>
+      </view>
+      <view class='btnsBox'>
+        <view data-id='{{item.orderno}}' class='btn' wx:for='{{txt.btnTxt[item.status]}}' wx:for-item="btn" wx:key='index' data-type='{{btn}}' catchtap='btnFn'>{{btn}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 已发货 orderlist -->
+  <view class='orderList' hidden='{{activeIndex!=3}}'>
+    <view class='orderItem' bindtap='toOrderDetailFn' wx:for='{{dsh}}' wx:key='{{item.orderno}}'>
+     <view class='orderHead'>
+        <view>{{txt.orderNo}}：{{item.orderno}}</view>
+        <text class='statusTxt'>{{txt.statusTxt[item.status]}}</text>
+      </view>
+      <view class='prodsOfOrder'>
+        <view class='prod' wx:for='{{item.productlist}}' wx:for-item="prod" wx:key='{{prod.prodId}}'>
+          <image src='{{prod.image}}'></image>
+          <view class='txtBox'>
+            <view class='prodName'>{{prod.name}}</view>
+            <view class='prodDesc'>{{prod.sku.title}}</view>
+            <view class='PandN'>
+              <view class='price'>{{prod.price>0?"¥":""}}{{prod.price}}</view>
+              <view class='num'>x {{prod.num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='orderFoot' style='display: {{item.courierref?"flex":"none"}}'>
+        <text>{{item.couriername}} {{txt.expressNo}}：</text><text selectable='true' class='expressNum'>{{item.courierref}}</text>
+      </view>
+      <view class='btnsBox'>
+        <view data-id='{{item.orderno}}' class='btn' wx:for='{{txt.btnTxt[item.status]}}' wx:for-item="btn" wx:key='index' data-type='{{btn}}' catchtap='btnFn'>{{btn}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 已完成 orderlist -->
+  <view class='orderList' hidden='{{activeIndex!=4}}'>
+    <view class='orderItem' bindtap='toOrderDetailFn' wx:for='{{dpj}}' wx:key='{{item.orderno}}'>
+     <view class='orderHead'>
+        <view>{{txt.orderNo}}：{{item.orderno}}</view>
+        <text class='statusTxt'>{{txt.statusTxt[item.status]}}</text>
+      </view>
+      <view class='prodsOfOrder'>
+        <view class='prod' wx:for='{{item.productlist}}' wx:for-item="prod" wx:key='{{prod.prodId}}'>
+          <image src='{{prod.image}}'></image>
+          <view class='txtBox'>
+            <view class='prodName'>{{prod.name}}</view>
+            <view class='prodDesc'>{{prod.sku.title}}</view>
+            <view class='PandN'>
+              <view class='price'>{{prod.price>0?"¥":""}}{{prod.price}}</view>
+              <view class='num'>x {{prod.num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='orderFoot' style='display: {{item.courierref?"flex":"none"}}'>
+        <text>{{item.couriername}} {{txt.expressNo}}：</text><text selectable='true' class='expressNum'>{{item.courierref}}</text>
+      </view>
+      <view class='btnsBox'>
+        <view data-id='{{item.orderno}}' class='btn' wx:for='{{txt.btnTxt[item.status]}}' wx:for-item="btn" wx:key='index' data-type='{{btn}}' catchtap='btnFn'>{{btn}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

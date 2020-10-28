@@ -1,0 +1,67 @@
+<!--pages/feedback/feedback.wxml-->
+<view class='container'>
+  <!-- before submit -->
+  <view class='beforeBox' hidden='{{submitted}}'>
+    <view class='topSec'>
+      <!-- <image class='prodImg' src=''></image> -->
+      <view class='box'>
+        <view class='orderNum'>{{txt.orderNo}}：<text>{{orderId}}</text></view>
+        <view class='starsBox'>
+          <image wx:for='{{stars}}' wx:key='index' id='{{index}}' src='{{item==0?"../../imgs/graystar.png":"../../imgs/greenstar.png"}}' bindtap='starNumFn'></image>
+        </view>
+      </view>
+    </view>
+    <view class='txtBox'>
+      <textarea placeholder='{{txt.ph}}' placeholder-style="color: #aaa;" value='{{msg}}' bindinput='msgIptFn'></textarea>
+    </view>
+    <view class='uploadBox'>
+      <block wx:for='{{imgs}}' wx:key='index'>
+        <view class='upload'>
+          <image src='{{item}}'></image>
+        </view>
+      </block>
+      <block wx:for='{{vds}}' wx:key='index'>
+        <view class='upload'>
+          <video src='{{item}}'></video>
+        </view>
+      </block>
+    </view>
+    <view class='uploadBtns'>
+      <view class='uploadBtn' bindtap='chooseImgFn'>
+        <image class='aImg' src='../../imgs/image.png'></image>
+        <text>{{txt.aImg}}</text>
+      </view>
+      <view class='uploadBtn' bindtap='chooseVdFn'>
+        <image class='aVideo' src='../../imgs/video.png'></image>
+        <text>{{txt.aVideo}}</text>
+      </view>
+    </view>
+    <view class='submit' bindtap='submitFn'>{{txt.submit}}</view>
+  </view>
+
+  <!-- after submit -->
+  <view class='afterBox' hidden='{{!submitted}}'>
+    <view class='main'>
+      <image class='prodImg' src='https://athleticgreens.fugumobile.cn/imgs/prod.jpg'></image>
+      <view class='content'>
+        <view class='prodName'>Ultimate Daily Double Hit(60 days)</view>
+        <view class='starsBox'>
+          <image wx:for='{{stars}}' wx:key='index' src='{{item==0?"../../imgs/graystar.png":"../../imgs/greenstar.png"}}'></image>
+        </view>
+        <text class='feedbackTxt'>{{msg}}</text>
+        <view class='uploadedBox'>
+          <block wx:for='{{imgs}}' wx:key='index'>
+            <view class='uploaded'>
+              <image src='{{item}}'></image>
+            </view>
+          </block>
+          <block wx:for='{{vds}}' wx:key='index'>
+            <view class='uploaded'>
+              <video src='{{item}}'></video>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

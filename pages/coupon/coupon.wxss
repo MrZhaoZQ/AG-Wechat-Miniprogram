@@ -1,0 +1,53 @@
+/* pages/coupon/coupon.wxss */
+page{
+  background: #e6e6e6;
+}
+.container{
+  font-size: 26rpx;
+}
+
+.couponKV{
+  width: 750rpx; height: 640rpx;
+}
+.couponList{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx;
+}
+.couponList .couponItem{
+  width: 670rpx; height: 268rpx;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+  position: relative; left: 0; top: 0;
+  color: #fff;
+}
+.couponList .couponItem image{
+  width: 670rpx; height: 268rpx;
+  border-radius: 10rpx;
+}
+.voucher, .val, .timeEn, .timeCn{
+  width: 225rpx;
+  position: absolute; left: 30rpx;
+}
+.timeEn, .timeCn{
+  display: block;
+  word-wrap: break-word;
+  line-height: 26rpx;
+  font-size: 20rpx;
+}
+.voucher{
+  top: 20rpx;
+}
+.val{
+  left: 26rpx;
+  top: 60rpx;
+  font-family: "cprBold";
+  font-weight:bolder;
+  font-size: 40rpx;
+}
+.timeEn{
+  top: 136rpx;
+}
+.timeCn{
+  top: 196rpx;
+}

@@ -1,0 +1,22 @@
+<!--pages/invoice/invoice.wxml-->
+<view class='container'>
+  <view class='individual' bindtap='individualFn'>
+    <text>{{txt.person}}</text>
+    <icon type="{{isIndividual}}" size="18" color='#022753'/>
+  </view>
+  <view class='companyBox'>
+    <view class='company' bindtap='companyFn'>
+      <text>{{txt.company}}</text>
+      <icon type="{{isCompany}}" size="18" color='#022753'/>
+    </view>
+    <view class='inputBoxs' hidden='{{isCompany!="success"}}'>
+      <view class='inputBox'>
+        <input bindinput='gsttBlurFn' class='gstt' type='text' value='{{gstt}}' placeholder='{{txt.gstt_ph}}'></input>
+      </view>
+      <view class='inputBox'>
+        <input bindinput='qyshBlurFn' class='qysh' type='text' value='{{qysh}}' placeholder='{{txt.qysh_ph}}'></input>
+      </view>
+    </view>
+  </view>
+  <view bindtap='saveFn' class='saveBtn'>{{txt.btn}}</view>
+</view>

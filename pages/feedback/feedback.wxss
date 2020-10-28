@@ -1,0 +1,167 @@
+/* pages/feedback/feedback.wxss */
+.container{
+  font-size: 26rpx;
+  border-top: 1rpx #e6e6e6 solid;
+}
+
+.beforeBox, .afterBox{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 80rpx 40rpx;
+}
+.prodImg{
+  width: 97rpx; height: 97rpx;
+  box-sizing: border-box;
+  border: 1rpx #e6e6e6 solid;
+  margin-right: 25rpx;
+}
+
+.beforeBox .topSec{
+  width: 100%;
+  margin-bottom: 55rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.beforeBox .topSec .box{
+  flex: 1;
+  height: 97rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.beforeBox .topSec .box .orderNum text{
+  color: #012856;
+}
+.beforeBox .topSec .box .starsBox{
+  width: 100%;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.beforeBox .topSec .box .starsBox image{
+  width: 38rpx; height: 36rpx;
+  margin-right: 8rpx;
+}
+.beforeBox .txtBox{
+  width: 100%; height: 460rpx;
+  box-sizing: border-box;
+  padding: 50rpx 60rpx;
+  border: 1rpx #e6e6e6 solid;
+  border-radius: 20rpx;
+  background: #f2f2f2;
+}
+.beforeBox .txtBox textarea{
+  width: 100%; height: 100%;
+}
+.beforeBox .uploadBox{
+  width: 100%;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+  padding: 0 15rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.beforeBox .uploadBox .upload{
+  width: 120rpx; height: 120rpx;
+  border-radius: 10rpx;
+  margin: 0 4rpx;
+}
+.beforeBox .uploadBox .upload image, .beforeBox .uploadBox .upload video{
+  width: 120rpx; height: 120rpx;
+  box-sizing: border-box;
+  border: 1rpx #ccc solid;
+  border-radius: 10rpx;
+}
+.beforeBox .uploadBtns{
+  width: 100%;
+  margin: 50rpx 0;
+  box-sizing: border-box;
+  padding: 0 19rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.beforeBox .uploadBtns .uploadBtn{
+  width: 140rpx; height: 120rpx;
+  box-sizing: border-box;
+  border: 1rpx #cdcdcd dashed;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.beforeBox .uploadBtns .uploadBtn .aImg{
+  width: 43rpx; height: 31rpx;
+}
+.beforeBox .uploadBtns .uploadBtn .aVideo{
+  width: 42rpx; height: 41rpx;
+}
+.beforeBox .uploadBtns .uploadBtn text{
+  font-size: 22rpx;
+  color: #aaa;
+  margin-top: 10rpx;
+}
+.beforeBox .submit{
+  width: 100%; height: 68rpx;
+  background: #012856;
+  color: #fff;
+  text-align: center;
+  line-height: 68rpx;
+  border-radius: 10rpx;
+}
+
+.afterBox .main{
+  width: 670rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.afterBox .main .content{
+  width: 548rpx;
+}
+.afterBox .main .content .prodName{
+  margin-top: 6rpx;
+}
+.afterBox .main .content .starsBox{
+  width: 100%;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.afterBox .main .content .starsBox image{
+  width: 38rpx; height: 36rpx;
+  margin-right: 8rpx;
+}
+.afterBox .main .content .feedbackTxt{
+  width: 100%;
+  margin: 30rpx 0 40rpx;
+  display: block;
+  text-align: justify;
+  word-wrap: break-word;
+}
+.afterBox .main .content .uploadedBox{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.afterBox .main .content .uploadedBox .uploaded{
+  width: 120rpx; height: 120rpx;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+}
+.afterBox .main .content .uploadedBox .uploaded image, .afterBox .main .content .uploadedBox .uploaded video{
+  width: 120rpx; height: 120rpx;
+  box-sizing: border-box;
+  border: 1rpx #ccc solid;
+  border-radius: 10rpx;
+}

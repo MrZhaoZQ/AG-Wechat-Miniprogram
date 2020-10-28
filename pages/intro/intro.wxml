@@ -1,0 +1,85 @@
+<!--pages/intro/intro.wxml-->
+<view class='container'>
+  <view class='one'>
+    <view class='title'>{{txt.one.title}}</view>
+    <view class="desc">{{txt.one.desc}}</view>
+  </view>
+  
+  <view class='two'>
+    <view class='title'>{{txt.two.title}}</view>
+    <view class='icsItem' wx:for="{{txt.two.ics}}" wx:key="index">
+      <view class='itemName' data-id='{{index}}' bindtap='showOrHideFn'>
+        <text>{{item.sub}}</text>
+        <view class='btn'>{{ics[index]}}</view>
+      </view>
+      <text class='txtBox' style='display: {{ics[index]=="-"?"block":"none"}}'>{{item.copy}}</text>
+    </view>
+  </view>
+  <view class="icsImgList">
+    <view class="imgItem" wx:for="{{txt.two.icsImgs}}" wx:key="index">
+      <image src="{{item.img}}"></image>
+      <text>{{item.text}}</text>
+    </view>
+  </view>
+
+  <view class='checkBtn' bindtap='showPopupFn'>
+    <view class="btnTxt">{{txt.two.btn}}</view>
+    <image class="btnImg01" src="https://athleticgreens.fugumobile.cn/imgs/v2020/introProd.png"></image>
+    <image class="btnImg02" src="https://athleticgreens.fugumobile.cn/imgs/v2020/checkMore.png"></image>
+  </view>
+
+  <view class="three">
+    <text class="title">{{txt.three}}</text>
+    <view class="threeBox">
+      <swiper style="height: {{ah}}px" 
+      indicator-dots="{{indicatorDots}}" 
+      interval="{{interval}}" 
+      duration="{{duration}}" 
+      current="{{current}}" 
+      bindchange="swiperChangeFn">
+      <swiper-item wx:for="{{ingts}}" wx:for-item="swp" wx:for-index="ix" wx:key="ix" >
+        <view class="swpList {{'swpList'+ix}}">
+          <view class="swpItem" wx:for="{{swp}}" wx:key="index">
+            <view class="itemHead" id="{{index}}" bindtap='toggleFn'>
+              <text>{{item.name}}</text>
+              <text class="mark">+</text>
+            </view>
+            <view class="itemChild" hidden="{{item.mark==0}}">
+              <image src="{{item.img}}"></image>
+              <text class="itemDesc">{{item.desc}}</text>
+              <text class="keywords">{{item.kws}}</text>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+    <view class="dots">
+      <view wx:for="{{ingts.length}}" wx:key="index" class="dot {{index==current?'active':''}}"></view>
+    </view>
+    </view>
+  </view>
+
+  <view class="four">
+    <text class="title">{{txt.four.title}}</text>
+    <view class="fourItem" wx:for="{{txt.four.ics}}" wx:key="index">
+      <image class="{{index==2?'specImg':''}}" mode="widthFix" src="{{item.img}}"></image>
+      <text class="subtitle">{{item.sub}}</text>
+      <text class="fourDesc">{{item.copy}}</text>
+    </view>
+    <text class="subtitle">{{txt.four.subtitle}}</text>
+    <text class="fourDesc">{{txt.four.subdesc}}</text>
+  </view>
+
+</view>
+
+<view class='popupContainer' hidden='{{!showPopup}}'>
+  <view class='popup'>
+    <view class='content'>
+      <view class='imgsBox'>
+        <image class='IB1' mode="widthFix" src='{{txt.IB1}}'></image>
+        <image class='IB2' mode="widthFix" src='{{txt.IB2}}'></image>
+      </view>
+    </view>
+    <image class='closePopup' bindtap='closePopupFn' src='../../imgs/close.png'></image>
+  </view>
+</view>

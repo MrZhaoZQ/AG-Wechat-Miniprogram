@@ -1,0 +1,25 @@
+<!--pages/address/address.wxml-->
+<view class='container'>
+  <view class='addressList'>
+    <view class='addressItem' wx:for='{{addrlist}}' wx:key='index'>
+      <view class='infoBox' id='{{item.id}}' bindtap='clickFn'>
+        <view class='info'>
+          <text class='name'>{{item.user_name}}</text>
+          <text class='phone'>{{item.user_phone}}</text>
+        </view>
+        <view class='address'>{{item.province+item.city+item.region+item.address}}</view>
+      </view>
+      <view class='btnsBox'>
+        <view data-id='{{item.id}}' bindtap='setDefaultFn' class='isDefault'>
+          <icon type='{{item.default==1?"success":"circle"}}' size="18" color="#012856"></icon>{{txt.def}}
+        </view>
+        <view class='opts'>
+          <image class='edit' data-id='{{item.id}}' bindtap='editAddrFn' src='../../imgs/edit.png'></image>
+          <image class='delete' data-id='{{item.id}}' bindtap='deleteAddrFn' src='../../imgs/delete.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='addBtn' bindtap='toEditAddressFn'>{{txt.addNew}}</view>
+</view>

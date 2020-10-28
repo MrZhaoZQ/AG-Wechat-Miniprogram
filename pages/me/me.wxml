@@ -1,0 +1,141 @@
+<!--pages/me/me.wxml-->
+<view class='container'>
+  <official-account></official-account>
+  <view class='topBox'>
+    <image class='userKV' src='https://athleticgreens.fugumobile.cn/imgs/userkv.png'></image>
+    <!-- <image bindtap='showPosterFn' class='QRcode' src='../../imgs/qrcode.svg'></image> -->
+    <view class='userInfo'>
+      <image class='userPhoto' src='{{userInfo.head_img_url}}'></image>
+      <view class='nickName'>{{userInfo.nick_name}}</view>
+      <view class='pointsBox' bindtap='showPRFn'>
+        <view class='points'>{{txt.pts}}：{{userInfo.point}}</view>
+        <image src='../../imgs/arr_points.png'></image>
+      </view>
+      <!-- <view class='signBox' bindtap='toSignFn'>
+        <image src='../../imgs/gift.png'></image>
+        <view>{{txt.signIn.entry}}</view>
+      </view> -->
+    </view>
+  </view>
+
+  <view class='myBox'>
+    <view class='order'>
+      <navigator url="/pages/orderlist/orderlist?ordertype=0">
+        <text>{{txt.order.mine}}</text>
+        <view>{{txt.order.all}}</view>
+      </navigator>
+    </view>
+    <view class='myList'>
+      <navigator class='myItem' url="/pages/orderlist/orderlist?ordertype=1">
+        <view class='itemName'>
+          <image src='../../imgs/payment.svg'></image>
+          <text>{{txt.order.dfk}}</text>
+          <view class='num'>{{userInfo.orders[0]}}</view>
+        </view>
+      </navigator>
+      <navigator class='myItem' url="/pages/orderlist/orderlist?ordertype=2">
+        <view class='itemName'>
+          <image src='../../imgs/shipping.svg'></image>
+          <text>{{txt.order.dfh}}</text>
+          <view class='num'>{{userInfo.orders[1]}}</view>
+        </view>
+      </navigator>
+      <navigator class='myItem' url="/pages/orderlist/orderlist?ordertype=4">
+        <view class='itemName'>
+          <image class='shippedImg' src='../../imgs/shipped.svg'></image>
+          <text>{{txt.order.dsh}}</text>
+          <view class='num'>{{userInfo.orders[2]}}</view>
+        </view>
+      </navigator>
+      <navigator class='myItem' url="/pages/orderlist/orderlist?ordertype=5">
+        <view class='itemName'>
+          <image src='../../imgs/evaluate.svg'></image>
+          <text>{{txt.order.qpj}}</text>
+          <view class='num'>{{userInfo.orders[3]}}</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view class='moreList'>
+    <view class='moreItem' bindtap='toCartFn'>
+      <view><image class='cartIcon' src='../../imgs/cart.svg'></image>{{txt.more[0]}}</view>
+      <image class='arr_right' src='../../imgs/arr_right.jpg'></image>
+    </view>
+    <view class='moreItem' bindtap='toAddressFn'>
+      <view><image class='addressIcon' src='../../imgs/address.svg'></image>{{txt.more[1]}}</view>
+      <image class='arr_right' src='../../imgs/arr_right.jpg'></image>
+    </view>
+    <view class='moreItem' bindtap='toCouponFn'>
+      <view><image class='couponIcon' src='../../imgs/coupon.svg'></image>{{txt.more[2]}}</view>
+      <image class='arr_right' src='../../imgs/arr_right.jpg'></image>
+    </view>
+    <button class='moreItem' open-type="contact" session-from="nickName={{userInfo.nick_name}}|avatarUrl={{userInfo.head_img_url}}|foreignid={{uId}}|referrerTitle=AGMiniApp">
+      <view><image class='serviceIcon' src='../../imgs/service.svg'></image>{{txt.more[3]}}</view>
+      <image class='arr_right' src='../../imgs/arr_right.jpg'></image>
+    </button>
+    <view class='moreItem' bindtap='toHelpFn'>
+      <view><image class='helpIcon' src='../../imgs/helpCenter.svg'></image>{{txt.more[4]}}</view>
+      <image class='arr_right' src='../../imgs/arr_right.jpg'></image>
+    </view>
+  </view>
+</view>
+
+<!-- sign in popup -->
+<view class='popupContainer' hidden='{{!toSign}}'>
+  <view class='signPopup'>
+    <view class='content'>
+      <image class='signkv' src='https://athleticgreens.fugumobile.cn/imgs/signkv.png'></image>
+      <view class='daysBox'>
+        <view class='day {{signStatus[0]==1?"active":""}}'>{{txt.signIn.days[0]}}</view>
+        <view class='day {{signStatus[1]==1?"active":""}}'>{{txt.signIn.days[1]}}</view>
+        <view class='day {{signStatus[2]==1?"active":""}}'>{{txt.signIn.days[2]}}</view>
+        <view class='day {{signStatus[3]==1?"active":""}}'>{{txt.signIn.days[3]}}</view>
+        <view class='day {{signStatus[4]==1?"active":""}}'>
+          <image src='../../imgs/couponIcon.png'></image>{{txt.signIn.days[4]}}
+        </view>
+      </view>
+      <view class='btn' bindtap='signInFn'>{{signBtnTxt}}</view>
+    </view>
+    <image class='closeSign' bindtap='closeSignFn' src='../../imgs/close.png'></image>
+  </view>
+</view>
+
+<!-- poster popup -->
+<view class='popupContainer' hidden='{{!showPoster}}'>
+  <view class='posterPopup'>
+    <view class='content' catchtouchmove="preventFn">
+      <!-- <image src='{{posterSrc}}' bindlongtap='save2AlbumFn'></image> -->
+      <canvas hidden='{{hideCanvas}}' id="canvasPoster" canvas-id="canvasPoster" bindlongtap='save2AlbumFn'></canvas>
+    </view>
+    <image class='closePoster' bindtap='closePosterFn' src='../../imgs/close.png'></image>
+  </view>
+</view>
+
+<!-- points rules popup -->
+<view  class='popupContainer' hidden='{{!showPR}}'>
+  <view class='prPopup'>
+    <view class='content'>
+      <view class='title'>{{txt.pr.title}}</view>
+      <view class='line'></view>
+      <text class='desc'>{{txt.pr.desc1}}</text>
+      <text class='desc'>{{txt.pr.desc2}}</text>
+      <view class='rules'>
+        <view class='rule' wx:for='{{txt.pr.rules}}' wx:key='index'>
+          <view class='prodName'>{{item.prod}}</view>
+          <view class='prodValue'>{{item.prodVal}}</view>
+        </view>
+      </view>
+      <view class='btmBox'>
+        <image src='https://athleticgreens.fugumobile.cn/imgs/prod_pr.png'></image>
+        <view class='exBox'>
+          <text>{{txt.pr.ex_r_n}}<text class='txtSpec'>{{txt.pr.ex_r_s}}</text></text>
+        </view>
+      </view>
+    </view>
+    <image class='closePR' bindtap='closePRFn' src='../../imgs/close.png'></image>
+  </view>
+</view>
+
+<!-- 自定义组件authorize -->
+<authorize bind:myevent="onMyEvent" authorize-hidden="{{is_authorize_hidden}}" from-page="{{page_name}}" />

@@ -1,0 +1,152 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='banner'>
+    <swiper indicator-dots="{{indicatorDots}}" 
+      autoplay="{{autoplay}}" 
+      interval="{{interval}}" 
+      duration="{{duration}}" 
+      current="{{current}}" 
+      bindchange="bannerSwiperChange" 
+      bindtap='toFn'>
+      <block wx:for="{{txt.banners}}" wx:key="index">
+        <swiper-item>
+          <image class='bannerImg' src="{{item}}" />
+          <image class='txtImg' mode="widthFix" src='{{txt.bannerTxts[index]}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <image class='logo' src='https://athleticgreens.fugumobile.cn/imgs/logo_new.png'></image>
+  </view>
+
+  <view class='langBtn' bindtap='changeLangFn'>
+    <text class='{{lang=="cn"?"active":""}}'>中</text> / <text class='{{lang!="cn"?"active":""}}'>En</text>
+  </view>
+
+  <view class='products'>
+    <view class='subtitle'>PRODUCTS</view>
+    <view class='prodList'>
+      <view class='prodItem' wx:for="{{prods}}" wx:key="index" id='{{item.menuId}}' bindtap='toDetailFn'>
+        <image src="{{item.image}}" />
+        <view class='prodBox'>
+          <view class='prod'>{{item.name}}</view>
+          <view class='desc'>{{item.desc}}</view>
+          <block wx:if="{{item.discount_price}}">
+            <view class="priceBox">
+              <text class="promo_price">¥{{item.discount_price}}<text class='old_price'>¥{{item.price}}</text></text>
+            </view>
+          </block>
+          <block wx:else>
+            <view class='price'>{{item.price_type=="From"?"From ":""}}¥{{item.price}}{{item.price_type=="起"?" 起":""}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class='tud'>
+    <text class='subtitle'>{{txt.tud.title}}</text> 
+    <view class='topSec'>
+      <image class='tudImg' src='https://athleticgreens.fugumobile.cn/imgs/tudImg.png'></image>
+      <text class='tudSubtitle'>{{txt.tud.subtitle}}</text>
+      <text class='tudDesc'>{{txt.tud.desc}}</text>
+    </view>
+    <view class='btmSec'>
+      <image class='ncImg' src='https://athleticgreens.fugumobile.cn/imgs/ncImg.png'></image>
+      <view class='ncSubtitle'>{{txt.tud.nc}}</view>
+      <view class='ncItem' wx:for="{{txt.tud.ncs}}" wx:key="index">
+        <image src='../../imgs/success.png'></image>
+        <text>{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='benefits'>
+    <view class='subtitle'>{{txt.benefits.title}}</view>
+    <text class='desc'>{{txt.benefits.desc}}</text>
+    <view class='swiperBox'>
+      <swiper interval="{{benefitSwiper.interval}}" 
+        duration="{{benefitSwiper.duration}}" 
+        circular="{{benefitSwiper.circular}}" 
+        current="{{benefitSwiper.current}}" 
+        bindchange="benefitSwiperChange" 
+        previous-margin="146rpx" 
+        next-margin="168rpx">
+        <block wx:for="{{benefitSwiper.imgUrls}}" wx:key="index">
+          <swiper-item>
+            <image class="img{{index==benefitSwiper.current?'active':''}}" src="{{item}}" />
+            <text>{{txt.benefits.slides[index]}}</text>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class='prevBtn' bindtap='prevFn' data-name="benefit">
+        <image src='../../imgs/benefit_left.png'></image>
+      </view>
+      <view class='nextBtn' bindtap='nextFn' data-name="benefit">
+        <image src='../../imgs/benefit_right.png'></image>
+      </view>
+    </view>
+    <view class='more' bindtap='toIBFn'>Learn more<image src='../../imgs/arr_open.png'></image></view>
+    <view class='whyTake'>
+      <view class='subtitleBox'>
+        <image src='https://athleticgreens.fugumobile.cn/imgs/prodWhy.png'></image>
+        <text>{{txt.whyTake.title}}</text>
+      </view>
+      <view class='reason' wx:for="{{txt.whyTake.desc}}" wx:key="index">
+        <image src='../../imgs/success.png'></image>
+        <text>{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='recommend'>
+    <view class='subtitle'>{{txt.recommended.title}}</view>
+    <view class='swiperBox'>
+      <swiper interval="{{recommendSwiper.interval}}" 
+        duration="{{recommendSwiper.duration}}" 
+        circular="{{recommendSwiper.circular}}" 
+        current="{{recommendSwiper.current}}"  
+        bindchange="recommendSwiperChange">
+        <block wx:for="{{recommendSwiper.imgUrls}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item}}" />
+            <view class='person'>{{txt.recommended.slides[index].person}}</view>
+            <text class='resume'>{{txt.recommended.slides[index].resume}}</text>
+            <view class='sayBox'>
+              <image class='yh1' src='../../imgs/yh1.png'></image>
+              <text class='say'>{{txt.recommended.slides[index].say}}</text>
+              <image class='yh2' src='../../imgs/yh2.png'></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class='prevBtn' bindtap='prevFn' data-name="recommend">
+        <image src='../../imgs/recom_left.png'></image>
+      </view>
+      <view class='nextBtn' bindtap='nextFn' data-name="recommend">
+        <image src='../../imgs/recom_right.png'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='coffee'>
+    <view class='subtitle'>{{txt.coffee.title}}</view>
+    <view class='imgBox'>
+      <image class='cup' src='https://athleticgreens.fugumobile.cn/imgs/coffee.png'></image>
+      <image class='txt' src='{{txt.coffee.price}}'></image>
+      <text class="priceNum">{{txt.coffee.priceNum}}</text>
+    </view>
+    <text wx:for='{{txt.coffee.desc}}' wx:key='index'>{{item}}</text>
+  </view>
+</view>
+
+<!-- 固定按钮 -->
+<view class='specBtn' bindtap='specBtnFn'>Order Now</view>
+<button open-type='contact' session-from="nickName={{uInfo.nick_name}}|avatarUrl={{uInfo.head_img_url}}|foreignid={{uId}}|referrerTitle=AGMiniApp" style="left:{{x}};top:{{y}};" class='csBtn' capture-catch:touchmove="moveFn"></button>
+
+<view hidden="{{cartNum<1}}" class="shopCart" bindtap="toShopCartFn" style="left:{{cartx}};top:{{carty}};" capture-catch:touchmove="moveCartFn">
+  <view class="numIcon">{{cartNum}}</view>
+  <image src="../../imgs/cart.png"></image>
+</view>
+
+<!-- 自定义组件authorize -->
+<authorize bind:myevent="onMyEvent" authorize-hidden="{{is_authorize_hidden}}" from-page="{{page_name}}" />

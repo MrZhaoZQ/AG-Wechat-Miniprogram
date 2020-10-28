@@ -1,0 +1,4 @@
+<!--pages/clause/clause.wxml-->
+<view class="container">
+  <text selectable="{{selectable}}">{{dt}}</text>
+</view>
